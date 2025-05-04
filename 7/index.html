@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="images/logo.jpg" />
+    <title>TANG JINGLAN | HKBU</title>
+    <meta name="keywords" content="Your name, description, keywords" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* CSS styles here */
+        /* (Include all the CSS from the provided files) */
+        /* Basic Setup */
+        @font-face {
+            font-family: 'Hk Grotesk';
+            font-style: normal;
+            font-weight: 400;
+            src: url('fonts/HKGrotesk-Regular.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Jost';
+            font-style: normal;
+            font-weight: 400;
+            src: url('fonts/Jost-Regular.ttf') format('woff');
+        }
+
+        /* --------------------------------------- */
+        /* ----- Basic Setup ----- */
+        /* --------------------------------------- */
+
+        @font-face {
+            font-family: 'Hk Grotesk';
+            font-style: normal;
+            font-weight: 400;
+            src: url('fonts/HKGrotesk-Regular.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Jost';
+            font-style: normal;
+            font-weight: 400;
+            src: url('fonts/Jost-Regular.ttf') format('woff');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
+
+        :root {
+            --font-size-small: 1.8rem;
+            --font-size-normal: 2.2rem;
+            --font-size-medium: 2.8rem;
+            --font-size-medium-1: 3.6rem;
+            --font-size-large: 5.5rem;
+            --font-size-huge: 7.5rem;
+            --font-stack: 'Hk Grotesk', sans-serif;
+
+            --line-height-normal: 1.7;
+            --line-height-small: 1.2;
+
+            --black: #000;
+            --blue: #0069ee;
+            --white: #f0e9f2;
+            --white-1: #e5e5e6da;
+            --grey: #f5f5f5;
+            --light-grey: #e0e0e0;
+            --pure-white: #fff;
+
+
+            --container-max-width: 1180px;
+            --container-normal-width: 800px;
+            --container-medium-width: 700px; 
+            --container-small-width: 500px;
+
+            --gutter-huge: 12rem;
+            --gutter-medium: 6rem;
+            --gutter-normal: 3rem;
+            --gutter-small-1: 2.5rem;
+            --gutter-small: 2rem;
+
+            --border-light: 1px solid rgb(195, 193, 193);
+        }
+
+        html {
+            font-size: 62.5%; /* (16/10)*100 = 62.5% => 1rem = 10px */
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        @media(max-width: 1000px) {
+            html {
+                font-size: 52%;
+            }
+        }
+
+        body {
+            font-size: var(--font-size-small);
+            font-family: var(--font-stack);
+            font-weight: 400;
+            color: var(--white);
+            line-height: var(--line-height-normal);
+            /*background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
+            url('/7/background/jonathan-gallegos-HoMqP_ldh-s-unsplash.jpg');*/
+            background: var(--light-grey);
+            overflow-x: hidden;
+        }
+
+        .row {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+        }
+
+        @media(max-width: 1340px) {
+            .row {
+                max-width: 1100px;
+            }
+        }
+
+        @media(max-width: 1240px) {
+            .row {
+                padding: 0 var(--gutter-medium);
+            }
+        }
+
+        @media(max-width: 600px) {
+            .row {
+                padding: 0 var(--gutter-normal);
+            }
+        }
+
+        @media(max-width: 600px) {
+            .row {
+                padding: 0 var(--gutter-small);
+            }
+        }
+
+        section {
+            border-bottom: var(--border-light);
+            position: relative;
+            left: 50%;
+            transform: translate(-50%, 0%); /* Adjusts the position to truly center the element */
+            max-width: 80%; /* Ensures the text has full width for better control */
+        }
+
+        img {
+            object-fit: contain;
+            max-width: 100%;
+        }
+
+        /* --------------------------------------- */
+        /* ----- Headlines and Paragraphs ----- */
+        /* --------------------------------------- */
+
+        h1{
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+            line-height: var(--line-height-small);
+            color: var(--pure-white);
+        }
+        h2,
+        h3 {
+            font-family: 'Jost', sans-serif;
+            font-weight: 400;
+            line-height: var(--line-height-small);
+            color: var(--black);
+        }
+
+        .heading-primary {
+            line-height: 1;
+            font-size: var(--font-size-medium);
+            font-weight: 400;
+            margin-left: var(--gutter-normal); /* Add margin to the left of the title */
+            margin-right: var(--gutter-normal); /* Add margin to the right of the title */
+        }
+
+        @media(max-width: 900px) {
+            .heading-primary {
+                font-size: 6.5rem;
+            }
+        }
+
+        h2 {
+            font-size: var(--font-size-large);
+            margin-bottom: var(--gutter-medium);
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 30rem;
+            background: var(--blue);
+            margin: var(--gutter-small) 0;
+        }
+
+        h3 {
+            font-size: var(--font-size-medium-1);
+            margin-bottom: var(--gutter-small);
+        }
+
+        @media(max-width: 500px) {
+            .heading-primary {
+                font-size: var(--font-size-large);
+            }
+
+            h2 {
+                font-size: var(--font-size-medium-1);
+            }
+
+            h3 {
+                font-size: var(--font-size-medium);
+            }
+        }
+
+        p {
+            margin: var(--gutter-small-1) 0;
+            color: var(--black); /* Change color to black */
+        }
+
+        @media(max-width: 900px) {
+            p { 
+                max-width: var(--container-small-width);
+            }
+        }
+
+
+
+
+        /* --------------------------------------- */
+        /* ----- Buttons and Links ----- */
+        /* --------------------------------------- */
+
+        a {
+            color: var(--white);
+            font-weight: 400;
+            font-family: 'Jost', sans-serif;
+            transition: all .2s;
+            outline: 2px solid transparent;
+        }
+
+        ::-moz-focus-inner {
+            border: 0;
+        }
+
+        button:focus,
+        a:focus {
+            outline: 2px solid var(--blue);
+        }
+
+        body:not(.user-is-tabbing) button:focus,
+        body:not(.user-is-tabbing) a:focus {
+            outline: none;
+        }
+
+        .link:hover {
+            color: var(--blue);
+        }
+
+        .btn {
+            position: relative;
+            display: inline-block;
+            padding: 1rem 4.2rem;
+            text-decoration: none;
+            color: var(--black);
+            border: 1px solid  var(--blue);
+            font-weight: 400;
+            border-radius: 30px;
+            overflow: hidden; /* Ensures that the ::after pseudo-element does not overflow the button's rounded corners */
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+
+        .btn:hover {
+            
+            color: var(--pure-white); /* Change the text color to white on hover */
+            
+        }
+
+        .btn::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 100%;
+            background: var(--black);
+            height: 100%;
+            z-index: -1;
+            transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
+        }
+
+        .btn:hover::after,
+        .btn:focus::after {
+            right: 0;
+            background: var(--blue);
+        }
+        .button-container {
+            display: flex;
+            justify-content: start; /* Adjust as needed: start, space-between, center, etc.*/
+            align-items: center;
+        }
+
+        .btn--blue {
+            display: inline-block;
+            margin-right: 10px;
+            backdrop-filter: blur(30px); /* Adjust the px value to increase or decrease the blur effect */
+            -webkit-backdrop-filter: blur(30px); /* For Safari */
+            background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+            border: 1px solid transparent; /* Set border color to transparent */
+            color: white; /* Ensuring text is visible, adjust as needed */
+            box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2); /* Optional: adds a subtle shadow below the button */
+        }
+        .btn--blue:last-child {
+            margin-right: 0;
+        }
+
+        .btn--blue::after {
+            display: none;
+        }
+
+        .btn--blue:hover,
+        .btn--blue:focus {
+            background-color: rgba(0, 105, 238, 0.8); /* Semi-transparent white background */
+            transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
+        }
+
+        .link__text {
+            position: relative;
+            display: inline-block;
+            padding: .6rem;
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid var(--blue);
+        }
+
+        .link__text::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 100%;
+            background: var(--white);
+            height: 100%;
+            z-index: -1;
+            transition: all 0.2s cubic-bezier(1, 0.68, 0.16, 0.9);
+        }
+
+        .link__text:focus {
+            outline: none;
+        }
+
+        .link__text:hover::after,
+        .link__text:focus:after {
+            right: 0;
+            background: var(--blue);
+        }
+
+        .link__text span {
+            padding-left: 1rem;
+            font-family: sans-serif;
+        }
+
+        /* ----- Back to Top ----- */
+
+        .back-to-top {
+            position: fixed;
+            bottom: 4rem;
+            right: 4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 5.5rem;
+            width: 5.5rem;
+            background-color: var(--blue);
+            border-radius: 50%;
+            z-index: 10;
+            visibility: hidden;
+            transition: all .4s;
+        }
+
+        .back-to-top__image {
+            height: 70%;
+        }
+
+        @media(max-width: 900px) {
+            .back-to-top {
+                right: 2rem;
+            }
+        }
+
+        @media(max-width: 500px) {
+            .back-to-top {
+                right: 1rem;
+            }
+        }
+
+        /* --------------------------------------- */
+        /* ----- Navigation ----- */
+        /* --------------------------------------- */
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            padding: var(--gutter-small) 0;
+            padding-right: var(--gutter-normal); /* Add padding to the right of the nav */
+            padding-left: var(--gutter-normal); /* Add padding to the left of the nav */
+            background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+            backdrop-filter: blur(10px); /* Gaussian blur */
+            -webkit-backdrop-filter: blur(10px); /* For Safari */
+            width: 100%;
+            position: fixed; /* Keeps the nav fixed at the top of the viewport */
+            top: 0; /* Aligns the nav to the top */
+            left: 0; /* Aligns the nav to the left edge */
+            z-index: 1000; /* Ensures the nav stays on top of other content */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow for depth */
+        }
+
+        .nav__items {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav__item:not(:last-child) {
+            margin-right: var(--gutter-medium);
+        }
+
+        @media(max-width: 500px) {
+            .nav {
+                justify-content: center;
+            }
+        }
+
+        @media(max-width: 400px) {
+            .nav__item:not(:last-child) {
+                margin-right: var(--gutter-normal);
+            }
+        }
+
+        @media(max-width: 300px) {
+            .nav {
+                font-size: var(--font-size-small);
+            }
+        }
+
+        .nav__link {
+            position: relative;
+            display: inline-block;
+            padding: 1rem 0;
+            text-decoration: none;
+            color: var(--black);
+            transition: all .2s;
+            padding-top: var(--gutter-small); /* Increase top padding */
+            padding-bottom: var(--gutter-small); /* Increase bottom padding */
+        }
+
+        .nav__link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 100%;
+            display: inline-block;
+            height: 1rem;
+            background: var(--white);
+            transition: all 0.25s cubic-bezier(1, 0.68, 0.16, 0.9);
+        }
+
+        .nav__link:hover {
+            color: var(--blue);
+        }
+
+        .nav__link:hover::after {
+            right: 0;
+            height: 2px;
+            background: var(--blue);
+        }
+
+        /* --------------------------------------- */
+        /* ----- Header ----- */
+        /* --------------------------------------- */
+
+        .header {
+            position: relative;
+            background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0, .4)), 
+                url('background/oscar-cadiach-8DGoi06ojZU-unsplash.JPG');
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-size: var(--font-size-normal);
+            padding-top: var(--gutter-normal); /* Increased top padding to accommodate nav bar */
+            padding-bottom: var(--gutter-normal);
+            padding-left: var(--gutter-small);
+            padding-right: var(--gutter-small);
+            display: flex; /* Flexbox layout */
+            align-items: center;  /* Vertical centering */
+            text-align: center; /* Centers the text within the element */
+            justify-content: center;  /* Horizontal centering */
+        }
+
+        .header__text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Adjusts the position to truly center the element */
+            max-width: 80%; /* Ensures the text has full width for better control */
+            color: var(--white);
+        }
+
+        .header__text p {
+            margin: 1.5rem 0 3.5rem;
+            max-width: var(--container-medium-width);
+            font-family: 'Jost', sans-serif;
+            font-size: var(--font-size-medium);
+            color: inherit;
+        }
+
+        @media(max-width: 500px) {
+            .header {
+                text-align: center;
+            }
+
+            .header__text p {
+                transform: scale(.8);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+            }
+            .header__text-box {
+                align-items: center;
+            }
+        }
+
+
+        .header .header__text-box .highlight {
+            color: white; /* Increasing specificity */
+        }
+
+        /* --------------------------------------- */
+        /* ----- Work ----- */
+        /* --------------------------------------- */
+        .work {
+            display: flex;  /* Establishes this section as a flex container */
+            flex-direction: column;  /* Stacks flex items vertically */
+            align-items: center;  /* Centers the heading horizontally */
+            text-align: center;  /* Centers the text within the heading element itself */
+            padding: 20px;  /* Adds some padding inside the section */
+            border-radius: 30px;  /* Applies rounded corners to the section */
+            background-color: rgba(255, 255, 255, 0.3);  /* Semi-transparent white background */
+            backdrop-filter: blur(30px);  /* Adds a blur effect to the background */
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);  /* Optional shadow for depth */
+            margin-top: 10px;  /* Additional top margin to distance it from elements above, if necessary */
+            margin-bottom: 10px;
+            margin-right: 20px;
+        }
+
+        .work__box {
+            display: flex;
+            align-items: center;  /* Centers content horizontally in the box */
+        }
+
+        @media(max-width: 900px) {
+            .work__box {
+                align-items: initial;
+                flex-direction: column-reverse;
+            }
+        }
+
+        .work__box:not(:last-child) {
+            margin-bottom: 25rem;
+        }
+
+        @media(max-width: 500px) {
+            .work__box:not(:last-child) {
+                margin-bottom: 20rem;
+            }
+        }
+
+        .work__links {
+            display: flex;
+            align-items: center;
+        }
+
+        .work__text {
+            text-align: center;  /* Centers the text inside the text container */
+            width: 100%;  /* Optional: ensures text container uses full width of its parent */
+        }
+
+        .work__list {
+            /* list-style-type: square; */
+            list-style-position: inside;
+            margin-bottom: var(--gutter-normal);
+        }
+
+        .work__code {
+            display: block;
+            height: 3rem;
+            margin-left: var(--gutter-normal);
+            transition: all .3s;
+        }
+
+        .work__code:hover {
+            transform: scale(1.2);
+        }
+
+        .work__image-box {
+            margin-bottom: var(--gutter-normal);
+        }
+
+        @media(min-width: 901px) {
+            .work__image-box {
+                flex: 1;
+                margin: 0 0 0 10rem;
+            }
+        }
+
+        @media(max-width: 900px) {
+            .work__code {
+                height: 4rem;
+            }
+        }
+
+        /* --------------------------------------- */
+        /* ----- Clients ----- */
+        /* --------------------------------------- */
+
+        .client__logos {
+            display: flex;
+            justify-content: space-between;
+            filter: invert(100%) grayscale(100%) opacity(.8);
+        }
+
+        .client__logo {
+            height: 6.5rem;
+            max-width: 18rem;
+        }
+
+        @media(max-width: 1240px) {
+            .client__logos {
+                overflow-x: scroll;
+                padding: var(--gutter-normal);
+            }
+
+            .client__logo:not(:last-of-type) {
+                margin-right: var(--gutter-medium);
+            }
+        }
+
+        /* --------------------------------------- */
+        /* ----- About ----- */
+        /* --------------------------------------- */
+
+        .about__content {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+
+        @media(max-width: 900px) {
+            .about__content {
+                flex-direction: column-reverse;
+                align-items: initial;
+            }
+        }
+
+        .about__photo-container {
+            margin-bottom: var(--gutter-normal);
+        }
+
+        @media(min-width: 901px) {
+            .about__text {
+                flex: 0 0 35%;
+            }
+            
+            .about__photo-container {
+                flex: 1;
+                margin: 0 var(--gutter-huge) 0 0;
+            }
+        }
+
+        /* --------------------------------------- */
+        /* ----- Contact ----- */
+        /* --------------------------------------- */
+
+        .contact__info {
+            max-width: var(--container-medium-width);
+        }
+
+        /* --------------------------------------- */
+        /* ----- Footer ----- */
+        /* --------------------------------------- */
+
+        .footer {
+            text-align: center;
+            padding: var(--gutter-medium) 0 var(--gutter-normal);
+        }
+
+        .footer__social-links {
+            display: flex;
+            justify-content: center;
+            padding: var(--gutter-normal) 0;
+            list-style: none;
+        }
+
+        .footer__social-link-item:not(:last-of-type) {
+            margin-right: var(--gutter-small);
+        }
+
+        .footer__social-image {
+            height: 4rem;
+        }
+
+        .footer__github-buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer__github-buttons iframe {
+            height: 2.5rem;
+            width: 84px;
+            transform: translateY(3px);
+        }
+
+        @media(max-width: 500px) {
+            .footer {
+                padding: var(--gutter-medium) 0;
+            } 
+        }
+
+        /* --------------------------------------- */
+        /* ---------- Social Media Bar ----------- */
+        /* --------------------------------------- */
+
+        .social-media-bar {
+            position: absolute;
+            text-decoration: none; /* Removes underline from links */
+            bottom: 5%; /* Anchors the bar to the bottom of the header */
+            left: 50%; /* Initially positions the left edge of the bar at the center of the header */
+            transform: translateX(-50%); /* Moves the bar leftwards by half its own width to center it */
+            background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+            backdrop-filter: blur(30px); /* Blur effect */
+            -webkit-backdrop-filter: blur(30px); /* For Safari */
+            border-radius: 30px; /* Rounded corners */
+            display: flex;
+            justify-content: center; /* Centers icons horizontally */
+            align-items: center; /* Center the icons within the bar vertically */
+            padding: 10px 10px; /* Top and bottom padding, and some padding on the sides */
+            box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2); /* Optional: adds subtle shadow above the social media bar */
+        }
+
+
+        .social-icon {
+            display: inline-block;
+            text-decoration: none; /* Removes underline from links */
+            color: white; /* Sets the color of the link text, if any */
+            margin: 5px 15px; /* Adds horizontal spacing between icons */
+        }
+
+        .social-icon img {
+            width: 30px; /* Sets a uniform size for the icons */
+            height: 30px;
+            display: block;  /* Removes any extra line-height space */
+            transition: transform 0.3s ease; /* Smooth transition for hover effects */
+        }
+
+        /* Specific styling for the LinkedIn icon if it has a unique class or ID */
+        .social-icon.linkedin img { /* Assume you add a class "linkedin" to the LinkedIn <a> tag */
+            width: 37px;  /* Adjust the size to match other icons */
+            height: 37px; /* Adjust the size to match other icons */
+        }
+
+        .social-icon:hover img {
+            transform: scale(1.2); /* Slightly enlarges the icon on hover */
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header class="header" role="banner" id="top">
+        <nav class="nav" role="navigation">
+            <ul class="nav__items">
+                <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+                <li class="nav__item"><a href="#aboutme" class="nav__link">About</a></li>
+                <li class="nav__item"><a href="#about" class="nav__link">Photography</a></li>
+            </ul>
+        </nav>
+        <div class="header__text-box">
+            <img src="images/github_selfie.JPG" alt="github selfie" style="max-width: 200px; border-radius: 50%; margin-bottom: 20px;">
+            <h1 class="heading-primary"><span>TANG JINGLAN</span></h1>
+            <p class="highlight">HKBU AIDM</p>
+            <p class="highlight">Programming / Photography / Writting</p>
+            <a href="#contact" class="btn btn--blue">Get in touch</a>
+            <div class="social-media-bar">
+                <a href="https://github.com" target="_blank" class="social-icon">
+                    <img src="images/github.svg" alt="Github">
+                </a>
+                <a href="https://twitter.com" target="_blank" class="social-icon">
+                    <img src="images/twitter.svg" alt="Twitter">
+                </a>
+                <a href="https://www.instagram.com" target="_blank" class="social-icon">
+                    <img src="images/instagram.svg" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" class="social-icon linkedin">
+                    <img src="images/linkedin.svg" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+        <section class="work" id="aboutme">
+            <h2>About me</h2>
+            <p style="max-width: 900px; margin: 0 auto; color: #222; text-align: left;">
+                I completed my undergraduate studies in Journalism at Southwest University of Political Science and Law and pursued my postgraduate studies in AI and Digital Media at Hong Kong Baptist University, specializing in news gathering and editing as well as digital media. During my school years, I drove my learning through practice and accumulated compound abilities through multiple in-depth internships and academic projects.<br><br>
+                In terms of professional practice, I once served as a marketing intern in L 'Oreal China's High-End Cosmetics Division, responsible for consumer profile analysis, tracking the effectiveness of KOL placements, and cross-platform joint marketing. I led the completion of data analysis for over 300 samples and promoted the optimization of marketing strategies in the third quarter. During the internship at the Media Convergence Center of Tongliang District, Chongqing, I independently planned short video topics related to people's livelihood. The highest play count of a single work I produced exceeded 110,000, and I mastered the entire process of content production. More than 50 articles have been published in Chongqing Daily Newspaper Group. The in-depth reports were awarded the title of "Good News", and solid experience in news gathering, writing and cross-disciplinary reporting has been accumulated.<br><br>
+                In terms of skills and leadership, I am proficient in the entire Adobe suite (PS/LR/PR/AE/ID), Python and SPSS data analysis tools, and possess the capabilities of public opinion analysis, new media operation and visual design. Served as the director of the Visual Editing Department of the New Media Center of the college, led the design of over 20 activity posters, promoted the reading volume of the official account to increase by 160%, and was selected as a key government account at the university level. He/She has received second and third class school-level scholarships as well as honors such as "Outstanding Journalist" and "Outstanding Young Volunteer".
+            </p>
+        </section>
+        <section class="work" id="about">
+            <h2>photography</h2>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(8, 1fr); gap: 16px; width: 100%; max-width: 600px; margin: 0 auto;">
+                <img src="images/1.JPG" alt="about1" style="width: 100%; aspect-ratio: 1/1; height: auto; border-radius: 10px; object-fit: cover;" />
+                <img src="images/2.JPG" alt="about2" style="width: 100%; aspect-ratio: 1/1; height: auto; border-radius: 10px; object-fit: cover;" />
+                <img src="images/3.JPG" alt="about3" style="width: 100%; aspect-ratio: 1/1; height: auto; border-radius: 10px; object-fit: cover;" />
+                <img src="images/4.JPG" alt="about4" style="width: 100%; aspect-ratio: 1/1; height: auto; border-radius: 10px; object-fit: cover;" />
+                <img src="images/5.JPG" alt="about5" style="width: 100%; aspect-ratio: 1/1; height: auto; border-radius: 10px; object-fit: cover;" />
+                <img src="images/6.JPG" alt="about6" style="width: 100%; aspect-ratio: 1/1; height: auto; border-radius: 10px; object-fit: cover;" />
+                <img src="images/7.JPG" alt="about7" style="width: 100%; aspect-ratio: 1/1; height: auto; border-radius: 10px; object-fit: cover;" />
+                <img src="images/8.JPG" alt="about8" style="width: 100%; aspect-ratio: 1/1; height: auto; border-radius: 10px; object-fit: cover;" />
+                <img src="images/9.JPG" alt="about9" style="width: 100%; aspect-ratio: 1/1; height: auto; border-radius: 10px; object-fit: cover;" />
+                <img src="images/10.JPG" alt="about10" style="width: 100%; aspect-ratio: 1/1; height: auto; border-radius: 10px; object-fit: cover;" />
+                <img src="images/11.JPG" alt="about11" style="width: 100%; aspect-ratio: 1/1; height: auto; border-radius: 10px; object-fit: cover;" />
+                <img src="images/12.JPG" alt="about12" style="width: 100%; aspect-ratio: 1/1; height: auto; border-radius: 10px; object-fit: cover;" />
+                <img src="images/13.JPG" alt="about13" style="width: 100%; aspect-ratio: 1/1; height: auto; border-radius: 10px; object-fit: cover;" />
+                <img src="images/14.JPG" alt="about14" style="width: 100%; aspect-ratio: 1/1; height: auto; border-radius: 10px; object-fit: cover;" />
+                <img src="images/15.JPG" alt="about15" style="width: 100%; aspect-ratio: 1/1; height: auto; border-radius: 10px; object-fit: cover;" />
+                <img src="images/16.JPG" alt="about16" style="width: 100%; aspect-ratio: 1/1; height: auto; border-radius: 10px; object-fit: cover;" />
+            </div>
+        </section>
+
+        <section class="work" id="work">
+            <h2>My Work</h2>
+            <div style="display: flex; justify-content: center; gap: 16px; max-width: 600px; margin: 0 auto 24px auto;">
+                <img src="images/q1.png" alt="q1" style="width: 100%; max-width: 290px; aspect-ratio: 1/1; height: auto; border-radius: 10px; object-fit: cover;" />
+                <img src="images/q2.png" alt="q2" style="width: 100%; max-width: 290px; aspect-ratio: 1/1; height: auto; border-radius: 10px; object-fit: cover;" />
+            </div>
+            <div class="experience-item">
+                <div style="color: #333; margin: 5px 0; text-align: left; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    <p style="font-size: 1.5em; font-weight: bold;">
+                        Huang Taocui, a representative of the 20th National Congress, said, "There is no empty talk about applied agriculture at all."<br>
+                        Source: Chongqing Daily<br>
+                        He Chunyang and Tang Jinglan, interns of Chongqing Daily Client
+                    </p>
+                    <p>A set of desks and chairs, a sofa and a computer make up all that Huang Taocui's office has. The family photo on the table and the daughter's doll are among the few bright "embellishments" in this office. "Pragmatic" journalist is the first impression of her.</p>
+                    <p>On September 22nd, in the rapeseed experimental field of Dianjiang, a batch of "materials" that had undergone "early maturity" quality analysis in June and July this year is about to be thrown into the embrace of the land. Generally, it can germinate 5 to 7 days after sowing. It's just these two days. During the interview, Huang Taocui was still concerned about her seeds. "Actually, I really wanted to go to the germination room to see the 'personality' of these seeds, but I might not be able to go back in time this time." On this land, Huang Taocui, the director of the Rapeseed Research Laboratory of Chongqing Academy of Agricultural Sciences and the recipient of the May Day Labor Medal, led her team to select and demonstrate the cultivation of several acres of the "Qingyou" series (were all grown in Qianjiang?), which has twice set new national records for oil content. "Qingkang" has improved the common root swelling disease of rapeseed. In addition, there have also been achievements in terms of oil content, variety and color, and oleic acid content. Nowadays, resolving the contradiction of crop rotation in rice-oil sowing and cultivating "early-maturing rice" have become the main focus of Huangtaocui. "Scientific research is about solving the problems of the common people stage by stage. This has always been our proposition." " Huang Taocui said.</p>
+                    <p>"Mr. Huang, if you plant rapeseed and then rice, the growth of the rice will decline. What should we do?" A villager from Dianjiang asked in xxx. Not only xxx, but also many farmers have such doubts. In the middle and lower reaches of the Yangtze River, after the harvest of rapeseed in early May, the planting of rice will be scheduled. The rotation and cooperation of the two can enhance the economic benefits of the land. However, as the harvest period of rapeseed is usually in the first ten days of May, it affects the sowing of rice, which has become a major problem in the minds of farmers after the oil content. My goal is to advance the harvest of rapeseed to April 20th. Applied agriculture cannot afford any pretense. Huangtaocui has taken the farmers' words to heart and put them into action. Select the raw materials of early-maturing rapeseed, aggregate breeding, and develop resistance...... Every step was carried out solidly by her. "As a Party member, addressing the needs of the country and the people is what I should do."</p>
+                    <p>In June 2014, while teaching in Hubei Province, Huang Taocui joined the Communist Party of China. When asked about the reason for joining the Party, she recalled, "From my Party branch secretary, I felt the power of integrity and sunshine, which made me also very eager to become one of them." After joining the Party, the spirit of the senior Party members has also constantly influenced her. In August 20xx, Huang Taocui went to the experimental field in Dianjiang to look for her "teacher", Director Li (specific name). To this day, Huang Taocui still describes in detail the scene at that time, "In 38-degree weather, I searched around but still found him." As a result, he wore a straw hat and his trousers were pulled up to his navel. He was completely a farmer. I didn't recognize him. He has integrated into the field. This is also an agricultural spirit that I pursue. Huang Taocui sighed. With such a spirit, getting up before dawn, working in the fields until it gets dark, running around for research, and returning to the base to have a couple of bites of fast food to get by have become her regular routine. Every progress and breakthrough regarding rapeseed has been made through "solid" exploration in the dark. In the words of Huang Taocui, it's "not at all empty". The hardships of the struggle and struggle are probably only known to Huang Taocui himself. Everyone has moments of confusion. Huang Taocui frankly admitted, "When I'm not doing well, I would think of Mr. Yuan, my teacher, and Director Li, and think about what they would do when encountering such difficulties." This spiritual strength sustains me to move forward. In just 13 years, Huang Taocui has transformed from a "latecomer" agricultural researcher into an outstanding expert in the field of applied rapeseed. I'm very excited to be elected as a representative to the 20th National Congress of the Communist Party of China this time. This is the supreme honor for me, but at the same time it also sets higher requirements for my future work. Huang Taocui said, "I hope that in the future, the area of rapeseed cultivation in China can be larger and that large-scale and mechanized production can be achieved as soon as possible."</p>
+                    <hr>
+                    <p style="font-size: 1.5em; font-weight: bold;">
+                        This small mountain building in Chongqing conceals its achievements and fame<br>
+                        Source: Chongqing Daily<br>
+                        He Chunyang and Tang Jinglan, interns of Chongqing Daily Client
+                    </p>
+                    <p>Old site materials The Exhibition Hall of the Former Site of the Central Committee of the China Agricultural Workers' Democratic Party is located at No. 55, Jialing New Road, Yuzhong District. This was the earliest central institution of a Democratic Party established in Chongqing and also one of the activity centers for non-Party members in Chongqing at that time. In September 1938, the main leaders of the China Peasants' and Workers' Democratic Party (referred to as the Peasants' and Workers' Democratic Party), such as Zhang Bojun and Peng Zexiang, successively arrived in Chongqing and chose No. 3, Banshan New Village, Liziba (now No. 55, Jialing New Road, Yuzhong District) as the location of the central government. In May 1946, the Peasants' and Workers' Democratic Party moved from Chongqing to Shanghai and worked in Liziba for as long as seven years and eight months. During this period, Zhou Enlai, Dong Biwu and others came here to discuss state affairs with members of the Peasants' and Workers' Democratic Party. Here, the close cooperation and active resistance against Japan between the Peasants' and Workers' Democratic Party and the Communist Party were witnessed, making significant contributions to saving the nation from peril and striving for national liberation.</p>
+                    <p>Narrator Zhang Changhong, vice chairperson of the Chongqing Municipal Committee of the China Peasants' and Workers' Democratic Party In the height of summer, the sky is clear and blue. Beside the Fotuguan Light Rail Station, a popular tourist attraction in Chongqing, groups of citizens and tourists are holding up their mobile phones with great interest, wanting to leave "traces" in this landscape. With the popularity of "Light Rail passing through buildings" and "Train to Spring" on the Internet, many people have come to know Chongqing Liziba Light Rail Station and Fotuguan Trail. However, few people know that right on the mountainside nearby, there is a small, ancient-looking building hidden among the green mountains and bamboo groves. This is the Exhibition Hall of the former Central Office of the China Agricultural Workers' and Peasants' Democratic Party. What's special here? Why is a central institution of a Democratic Party established here? What memorable stories have happened here again? Listening to Zhang Changhong's account, the reporter seemed to see the scenes that took place in the central office of the Peasants' and Workers' Democratic Party during the War of Resistance against Japanese Aggression.</p>
+                    <p>The earliest central institution of a Democratic Party established in Chongqing After the fall of Wuhan, the Resolution Committee (the predecessor of the Peasants' and Workers' Democratic Party) moved from Wuhan to Chongqing. Zhang Changhong said that the China Peasants' and Workers' Democratic Party was founded in 1930 and was the earliest Democratic Party established in China. "It was once also called the 'Provisional Committee' (the Provisional Action Committee of the Chinese Nationalist Party) and the 'Liberation Committee' (the Action Committee for the Liberation of the Chinese Nation)." In September 1938, on the eve of the fall of Wuhan, the center of China's political activities shifted to Chongqing. The main responsible persons of the People's Liberation Committee, Zhang Bojun, Peng Zexiang and others, arrived in Chongqing successively. As No. 3, Banshan New Village, Li Ziba is not far from the urban area and has a quiet environment, this place was chosen as the location of the central government agency to establish a liaison point for the central government agency. It will set up an organization department, a publicity department and a liaison department to handle various central affairs of the Communist Party of China Committee, and at the same time conduct Party affairs activities or receive people from all walks of life. Thus, this place became the earliest central institution of a Democratic Party established in Chongqing. The original building at No. 3, Banshan New Village had four small buildings, all of which were numbered. Building 1 was for Zhuang Mingyuan to live in, Building 2 for Deng Chumin to live in, Building 3 for Zhang Bojun to live in (after the War of Resistance against Japanese Aggression, Guo Zechen and Wang Shanji once lived there), and Building 4 for Jian Bozan to live in. This is the only photo we have collected so far taken in front of the original building at No. 3, Banshan New Village. It shows Ye Ting, Zhuang Mingyuan, Wang Shenlin, Qiu Xuexun and others. Zhang Changhong said. Entering the exhibition hall of the former Central Office of the China Peasants' and Workers' Democratic Party, on the left side of the entrance, you can see this enlarged lithographic photo. Zhang Changhong pointed at the photos and explained that since the work done at that time was relatively "covert", what was left for future generations were only some written records, and almost no photos were left behind. This precious photo was found in various parts of the country by mobilizing members of the Chongqing Municipal Committee of the China Agricultural Workers' and Peasants' Democratic Party after the approval of the reconstruction of the exhibition hall at the old site. The background of the photo is the central office of the Peasants' and Workers' Democratic Party at that time, with wooden lattice doors and Windows and a hip-and-gable small blue tile roof, a typical two-story brick and wood structure building from the last century. The caption below reads: In late January 1939, Ye Ting, the commander of the New Fourth Army, was invited by both the Kuomintang and the Communist Party to Chongqing. During his stay in Chongqing, Ye Ting visited the central office of the People's Liberation Committee and took a group photo as a memento. This is the place where patriotic figures such as Zhang Bojun, Qiu Zhe and Zhang Yunchuan, the early leaders of the Central Committee of the Peasants' and Workers' Democratic Party, once worked and fought. Zhang Changhong said that it was precisely here that the People's Liberation Committee reorganized its organization, unified its ideological understanding, and firmly maintained its close cooperative relationship with the Communist Party of China, making significant contributions to consolidating the anti-Japanese National United Front.</p>
+                    <p>Zhou Enlai once expressed incisive opinions here This relief was designed when we were preparing for the exhibition hall. The person in the middle is Comrade Zhou Enlai. Zhang Changhong said. Directly facing the entrance of the exhibition hall is a bronze relief wall, which recreates the scene when Zhou Enlai was invited to No. 3, Banshan New Village, Liziba, to have a meeting with Zhang Bojun, Qiu Zhe, Zhang Yunchuan, Wang Yifan, Zhuang Mingyuan, Yang Yitang and others. This scene has also been "replicated" in the meeting room on the second floor of the exhibition hall. At that time, the crisis of the War of Resistance against Japanese Aggression was severe. Japan launched a large-scale offensive, and the Kuomintang's anti-communist efforts had not yet ceased. With the development of the anti-Japanese salvation movement, the relationship between the People's Liberation Committee and the Communist Party of China became even closer. At 9 p.m. on a certain day in June 1943, in order to ensure safety and tranquility, the People's Liberation Committee invited Zhou Enlai for a meeting at No. 3, Banshan New Village. At a critical juncture when the nation is in peril, the survival of the nation cannot be guaranteed without the war of resistance; without unity, the war of resistance cannot be fought; without democracy, unity cannot be achieved. Striving for democracy and uniting in the War of Resistance against Japanese Aggression is the common cause of all of us. Zhou Enlai delivered incisive insights on major issues such as the domestic and international situation, the Anti-Japanese War propositions of the Communist Party of China, and the relationship between the Kuomintang and the Communist Party of China, and expounded on the united front policy of the Communist Party of China. He said that among the two major contradictions in China at present, the contradiction between the Chinese and Japanese ethnic groups remains fundamental. Striving for democracy and uniting in the War of Resistance against Japanese Aggression are the main tasks at present. To achieve the final victory of the War of Resistance against Japanese Aggression, there must be extensive unity to form a united front of the nation. This meeting greatly inspired the head of the Resolution Committee. It not only strengthened the committee's stance of striving for democracy and united resistance against the Japanese invaders, but also enhanced its confidence in cooperating with the Communist Party of China. Zhang Bojun also represented the People's Liberation Committee in saying, "In the process of the democratic movement, mistakes and shortcomings are inevitable. I hope to receive reminders and assistance from your party at any time in the future." At present, the national crisis is deepening day by day. We have only one way out, which is to unite and fight against the Japanese. Later, the Resolution Committee decided to send additional members to work in Guangdong, Jiangxi, Hong Kong and other places to expand the anti-Japanese democratic movement. In February 1947, at the Fourth National cadre meeting of the China Peasants' and Workers' Democratic Party, the Committee changed the party's name to "China Peasants' and Workers' Democratic Party", and once again explicitly proposed to take socialism as the goal of struggle and strengthen comprehensive cooperation with the Communist Party of China. On April 30, 1948, the Central Committee of the Communist Party of China issued the "May Day Slogan".​ The main leaders of the Peasants' and Workers' Democratic Party went north and actively participated in the preparations for the new CPPCC and the founding of the People's Republic of China. Let the old sites of the United Front play their contemporary value Until it moved to Shanghai in May 1946, the central office of the Peasants' and Workers' Democratic Party spent nearly eight years there. Zhang Changhong said that on the one hand, the unity and cooperation between the Peasants' and Workers' Democratic Party and the Communist Party have been witnessed here. On the other hand, here are also recorded extremely important historical events in the history of the Peasants' and Workers' Democratic Party: In December 1938, the Resolution Committee publicly issued a telegram titled "Denouncing Wang Zhaoming for Collaborating with the Enemy and Betraying the Country" : "Wang Jingwei's public treason is an inevitable outcome of his past actions." There are still quite a few followers of Wang Jingwei lurking in various places. The future threat is serious and cannot be tolerated. The investigation and arrest office should be withdrawn to ensure that all evil deeds are eradicated. Those who waver, compromise and take shortcuts must also be thoroughly eradicated to ensure the realization of the revolutionary policies of the War of Resistance against Japanese Aggression and achieve the final victory of the war. On October 10, 1940, the Liberation Committee issued a "Notice of Party Rectification" to the entire Party, requiring all Party members to re-register and take the oath, put forward the work standards for Party members and the "Eight Precepts", and issue a "Letter to All Party Members". After the Party rectification, the Committee for the Liberation of the Communist Party of China recruited a group of progressive backbone members into the Party. In early 1944, the Commission for Liberation established the "China Forum" press on the spot and officially published the bimonthly "China Forum" on February 1, 1945. This publication is edited by Zhang Bojun and has invited well-known figures from the Communist Party of China, democratic parties and all walks of life to serve as contributors. It has participated in the "Anti-Prosecution Campaign" and issued a joint statement of "We want peace, not civil war", becoming one of the influential public opinion platforms. In addition, No. 3 of Liziba Banshan New Village was also one of the activity centers for non-Party members in Chongqing at that time, providing an important venue for them to discuss current political affairs and jointly deliberate on state affairs.</p>
+                    <p>During the arduous years of the War of Resistance against Japanese Aggression, the Committee for the Liberation of the People followed one after another, closely cooperated with the Communist Party of China and fought side by side, making indelible contributions to striving for national independence and people's liberation. It is precisely because this place has played such an important role that in June 2013, the Chongqing Municipal Government officially approved the reconstruction project of the former site Exhibition Hall of the Central Committee of the China Agricultural Workers' Democratic Party. Zhang Changhong introduced that the exhibition hall was restored and built on the old site. Therefore, it is not only a cultural relic site but also an exhibition hall of important cultural relics such as the high-speed printing machine from the 1930s, which can better exert its contemporary value. On December 8, 2014, the Exhibition Hall of the Former Site of the Central Committee of the China Agricultural Workers' and Peasants' Democratic Party was officially opened. It was immediately listed as a base for the history education of the China Agricultural Workers' and Peasants' Democratic Party and a traditional education base for the United Front in Chongqing. This is an important historical witness of the China Agricultural Workers' Democratic Party and the Communist Party of China sharing weal and woe and standing together through thick and thin. Zhang Changhong said.</p>
+                    <hr>
+                    <p style="font-size: 1.5em; font-weight: bold;">
+                        He found a new way out for "Flower Field Tribute Rice"<br>
+                        Source: Chongqing Daily<br>
+                        Chongqing Daily reporter He Chunyang and intern Tang Jinglan
+                    </p>
+                    <p>On September 14th, in the farmlands of Zhangjia Village, Huatian Township, Youyang County, there was a bustling scene of harvesting. On that day, representatives of the village's collective economic organization and representatives of Youyang County Sangzhu Agricultural Company signed the "Water Millet Purchase Agreement". The villagers were all laughing from ear to ear. It's all thanks to Secretary Li helping us find a way. From now on, we just need to grow the millet well and we won't have to worry about selling it! Village Party branch secretary Ran Guangwu said. The Secretary Li mentioned by Ran Guangwu is named Li Dengke. On May 14, 2021, Li Dengke, 37 years old, became the liaison officer of the Huatian Township Work Team of the Rural Revitalization Assistance Group of the Municipal Committee Office (hereinafter referred to as the "Work Team stationed in the Township"). In December of the same year, he was appointed as the deputy secretary of the township's Party committee.</p>
+                    <p>One day in September last year, Li Dengke went to the village to visit households. Walking along the ridges of the fields in the countryside, he gazed at the rice that was plump in color, fine-grained and long in grain, lost in thought. The rice grown here was all tribute rice in ancient times. Why can't it be sold far and wide now? In fact, among the four long-term effect industries that Huatian Township has been concentrating on developing, namely Camellia oleifera, tea, tribute rice and tourism services, only tribute rice has not yet entered market-oriented operation. From this, Li Dengke came up with the idea of introducing leading enterprises as market entities, exploring the formation of a tribute rice industry featuring large-scale planting, batch processing and uniform price sales, and promoting the sustainable development of this industry. He approached the Youyang County Sangzhu Agricultural Development Co., LTD. (hereinafter referred to as "Sangzhu Agricultural Company"), which had certain economic strength and technological advantages in the local area, hoping that the company would take over the processing and sales of "Huatian Tribute Rice" in full. Unexpectedly, he was turned down. In the view of Ran Jinsong, the chairman of Sangzhu Agricultural Company, "The company has no experience in processing and selling tribute rice, so it did not rashly agree." "At first, they didn't take it to heart. They neither accepted nor refused, so I just 'got the money', ran away, communicated and fought for it." " After five phone calls and two home visits, Li Dengke won over Ran Jinsong. Subsequently, Li Dengke, along with Ran Jinsong, sought policy support and financial inclination, looking for cooperative funds to allay his concerns. In August this year, Sangzhu Agricultural Company finally agreed to fully accept the processing, sales and brand promotion of "Huatian Tribute Rice". Huatian Township is at a relatively high altitude, so the rice harvest season is rather late. However, as early as mid-August, Sangzhu Agricultural Company had already made contact with the processing base, formulated the sales model and established the sales channels. Nowadays, signing a procurement agreement with the collective economic organization of Huatian Village has also given the villagers a sense of reassurance. Li Dengke said. Having worked in the countryside for over a year, Li Dengke and the rural work team have done much more than that. Since last year, this assistance group has widely mobilized various resources and donated over 20 million yuan in special funds for industrial development to Huatian Township. By using the donated funds as "seed funds" to provide interest-free loans to village collective economic organizations or farmers' cooperatives and conducting investment cooperation with financial institutions, the funds have been effectively utilized and utilized, thus avoiding the loss of funds. The gains were realized again in the process of rolling. I still remember the first day I came to Youyang. We went to the South Yaojie Revolutionary Base Area and listened to many stories about the Red Army and the common people, which greatly touched me. Li Dengke said, "When it comes to developing industries, a long-term approach is the best strategy." As young people in government agencies, we should do practical things for the people on the "main battlefield" of rural revitalization and contribute our own strength to the sustainable development of local industries.</p>
+                </div>
+            </div>
+        </section>
+        <section class="work" id="contact">
+            <h2>Get in Touch</h2>
+            <div style="border-radius: 8px; padding: 32px; max-width: 700px; margin: 40px auto 0 auto; background: rgba(255,255,255,0.1);">
+                <p style="font-size: 1.3em; color: #222; text-align: center; font-weight: bold; margin-bottom: 24px;">TEL: 46248030 &nbsp; EMAIL: 24476188@life.hkbu.edu.hk</p>
+                
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo" class="footer">
+        <p>
+            &copy; 2025
+        </p>
+    </footer>
+
+    <a href="#top" class="back-to-top" title="Back to Top">
+        <img src="images/arrow-up.svg" alt="Back to Top"/>
+    </a>
+    <script>
+        /* -----------------------------------------
+        Have focus outline only for keyboard users 
+        ---------------------------------------- */
+
+        const handleFirstTab = (e) => {
+        if(e.key === 'Tab') {
+            document.body.classList.add('user-is-tabbing')
+
+            window.removeEventListener('keydown', handleFirstTab)
+            window.addEventListener('mousedown', handleMouseDownOnce)
+        }
+
+        }
+
+        const handleMouseDownOnce = () => {
+        document.body.classList.remove('user-is-tabbing')
+
+        window.removeEventListener('mousedown', handleMouseDownOnce)
+        window.addEventListener('keydown', handleFirstTab)
+        }
+
+        window.addEventListener('keydown', handleFirstTab)
+
+        const backToTopButton = document.querySelector(".back-to-top");
+        let isBackToTopRendered = false;
+
+        let alterStyles = (isBackToTopRendered) => {
+        backToTopButton.style.visibility = isBackToTopRendered ? "visible" : "hidden";
+        backToTopButton.style.opacity = isBackToTopRendered ? 1 : 0;
+        backToTopButton.style.transform = isBackToTopRendered
+            ? "scale(1)"
+            : "scale(0)";
+        };
+
+        window.addEventListener("scroll", () => {
+        if (window.scrollY > 700) {
+            isBackToTopRendered = true;
+            alterStyles(isBackToTopRendered);
+        } else {
+            isBackToTopRendered = false;
+            alterStyles(isBackToTopRendered);
+        }
+        });
+    </script>
+</body>
+</html>
